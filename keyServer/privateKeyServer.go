@@ -14,7 +14,7 @@ var s *server.Server
 func privateKeyServer() {
 	var e error
 
-	if s, e = server.NewServerFromFile(conf.Cert, conf.Key, conf.CA); e != nil {
+	if s, e = server.NewServerFromFile(server.DefaultServeConfig(), conf.Cert, conf.Key, conf.CA); e != nil {
 		panic(e)
 	}
 
@@ -25,10 +25,10 @@ func privateKeyServer() {
 
 	s.SetKeystore(keys)
 
-	cfg := server.DefaultServeConfig()
-	cfg.TCPAddr(conf.KeyAddr)
+	//cfg := server.DefaultServeConfig()
+	//cfg.TCPAddr(conf.KeyAddr)
 
-	if e := s.ListenAndServeConfig(cfg); e != nil {
+	if e := s.ListenAndServe(conf.KeyAddr); e != nil {
 		log.Fatal(e)
 	}
 

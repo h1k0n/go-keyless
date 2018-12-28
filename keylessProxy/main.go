@@ -93,7 +93,7 @@ func main() {
 		GetCertificate:         getCertificate,
 		SessionTicketsDisabled: false,
 		SessionTicketKey:       sha256.Sum256([]byte(conf.SessionTicketKey)),
-		ServerSessionCache:     NewGlobalSession(),
+		ClientSessionCache:     NewGlobalSession(),
 	}
 
 	l, e := tls.Listen("tcp", conf.Addr, serverConfig)
