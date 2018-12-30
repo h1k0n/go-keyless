@@ -4,16 +4,16 @@
     "resolvers": ["127.0.0.2:10001", "127.0.0.2:10002"],
     "pubKeyServer": ["127.0.0.1:2422"],
 
-    "cert": "./certs/kugou.crt",
-    "Key": "./certs/kugou.key",
-    "CA": "./certs/ss.pem",
+    "cert": "./client-cert/cert.pem",
+    "Key": "./client-cert/key.pem",
+    "CA": "./client-cert/cacert.pem",
     
     "sessionTicketKey": "When you forgive, you love. And When you love, god's light shines on you",
 
     "hosts":{
-    "www.demo.com":{
-        "keyServerAddr": "keyserver.keyless.com:2412",
-        "keyServerCA": "./certs/ss.pem"
+    "test.xxx.com":{
+        "priKeyServer": "127.0.0.1:2412",
+        "keyServerCA": "./client/cacert.pem"
         }
     }
 }

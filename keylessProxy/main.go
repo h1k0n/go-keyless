@@ -54,6 +54,7 @@ var (
 )
 
 func init() {
+        flag.Parse()
 	// 加载配置
 	if e := gocommon.LoadJsonConfig(*confile, &conf); e != nil {
 		panic(e)

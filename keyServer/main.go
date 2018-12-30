@@ -28,6 +28,7 @@ var (
 )
 
 func init() {
+        flag.Parse()
 	if e := gocommon.LoadJsonConfig(*confile, &conf); e != nil {
 		panic(e)
 	}

@@ -2,16 +2,13 @@
     "key_addr": ":2412",
     "cert_addr": ":2422",    
    	"cert_dir":"./certs",
-    "cert":"certs/kugou.crt",
-    "key":"certs/kugou.key",
-    "ca":"certs/ss.pem",
+    "cert":"server-cert/cert.pem",
+    "key":"server-cert/key.pem",
+    "ca":"server-cert/cacert.pem",
 
     "whiteip": "127.0.0.1 127.0.0.2",
     
     "hosts":{
-    "test.kugou.com":{
-        "keyServerAddr": "keyserver.keyless.com:2412",
-        "keyServerCA": "./certs/ss.pem"
-        }
+    "test.xxx.com":"./certs/cert.pem"
     }
 }

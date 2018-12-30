@@ -10,12 +10,13 @@ import (
 func main() {
 	client := &http.Client{Transport: &http.Transport{
 		TLSClientConfig: &tls.Config{
+			InsecureSkipVerify:     true,
 			SessionTicketsDisabled: true,
 		},
 		DisableCompression: true,
 	}}
 
-	resp, err := client.Get("https://test.kugou.com:1443/demo")
+	resp, err := client.Get("https://test.xxx.com:1443/hello")
 	if err != nil {
 		panic(err)
 	}
@@ -23,7 +24,7 @@ func main() {
 	fmt.Println(string(body))
 	fmt.Println(resp.Status)
 
-	resp, err = client.Get("https://test.kugou.com:1443/demo")
+	resp, err = client.Get("https://test.xxx.com:1443/hello")
 	if err != nil {
 		panic(err)
 	}
